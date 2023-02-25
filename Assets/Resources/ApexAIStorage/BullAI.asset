@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: BullAI
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: ba617324-be08-4f7f-924d-7597bbf3ad42
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":1893d3a552834c4da95eecfb4e079123,"_id":ba617324be084f7f924d7597bbf3ad42,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":1893d3a552834c4da95eecfb4e079123,"_qualifiers":[{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":4953909cb10d4a08887e80a8f629251f},"threshold":1,"_scorers":[{"@type":"HasNoAttackTargetInRange,
+    Assembly-CSharp","isDisabled":true},{"@type":"HasObservations, Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":2,"action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"AI.MoveToGrid,
+    Assembly-CSharp"},{"@type":"BaseEnemyScan, Assembly-CSharp"}]}}},{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":4953909cb10d4a08887e80a8f629251f,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"BaseEnemyScan,
+    Assembly-CSharp"},{"@type":"GetBestAttackTarget, Assembly-CSharp","MaxEnemiesToAttackOneTarget":1}],"_connectorAction":{"@type":"Apex.AI.SelectorAction,
+    ApexAI","_selectorId":e8b3374bb556448c9128fa393271773e}}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}},{"@type":"Apex.AI.ScoreSelector, ApexAI","_id":e8b3374bb556448c9128fa393271773e,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"MoveToTarget, Assembly-CSharp"}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":0}}]}'
+  editorConfiguration: '{"offset":{"@x":-237,"@y":-50},"zoom":1,"SelectorView":{"ViewArea":{"@left":-77,"@top":130,"@width":200,"@height":160},"QualifierView":{"Name":"Should
+    Move Closer","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Move
+    To Grid","ActionView":{"@connectorType":"Composite"}}},"SelectorView":{"ViewArea":{"@left":203,"@top":210,"@width":200,"@height":160},"QualifierView":{"ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{}},"SelectorView":{"ViewArea":{"@left":503,"@top":270,"@width":200,"@height":160},"QualifierView":{"Name":"Straight
+    move","ActionView":{}},"DefaultQualifier":{}}}'

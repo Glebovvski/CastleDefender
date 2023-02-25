@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: BaseEnemy
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: b733226d-9e53-4c8f-be29-f8abc9712f69
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":cc772bbff29c4ea8919b674a7c740fa8,"_id":b733226d9e534c8fbe29f8abc9712f69,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":cc772bbff29c4ea8919b674a7c740fa8,"_qualifiers":[{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":03bfb021520e44c0b954fae22a629f3e},"threshold":1,"_scorers":[{"@type":"HasNoAttackTargetInRange,
+    Assembly-CSharp","isDisabled":true},{"@type":"HasObservations, Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":2,"action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"BaseEnemyScan,
+    Assembly-CSharp"},{"@type":"AI.MoveToGrid, Assembly-CSharp"}]}}},{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":03bfb021520e44c0b954fae22a629f3e,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"BaseEnemyScan,
+    Assembly-CSharp"},{"@type":"GetBestAttackTarget, Assembly-CSharp","MaxEnemiesToAttackOneTarget":3}],"_connectorAction":{"@type":"Apex.AI.SelectorAction,
+    ApexAI","_selectorId":c08d73242bb44a78898f5c609849213c}}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","action":{"@type":"AI.MoveToGrid, Assembly-CSharp"}}},{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":c08d73242bb44a78898f5c609849213c,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","action":{"@type":"MoveToTarget, Assembly-CSharp"},"_scorers":[{"@type":"IsTargetClose,
+    Assembly-CSharp","isDisabled":true},{"@type":"IsTankInRange, Assembly-CSharp","not":true},{"@type":"IsActiveDefensesInSight,
+    Assembly-CSharp","not":true,"except":MissileLauncher,"ExceptTypeThreshold":0}]},{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"MoveUnderCover, Assembly-CSharp"},"threshold":1,"_scorers":[{"@type":"IsTankInRange,
+    Assembly-CSharp","not":false},{"@type":"IsActiveDefensesInSight, Assembly-CSharp","not":false,"except":None,"ExceptTypeThreshold":2}]},{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"MoveToHealer, Assembly-CSharp"},"_scorers":[{"@type":"IsHealerInRange,
+    Assembly-CSharp"},{"@type":"IsHealthBelowAmount, Assembly-CSharp","healthThreshold":0.40000001}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":-100,"action":{"@type":"MoveToTarget, Assembly-CSharp"}}}]}'
+  editorConfiguration: '{"offset":{"@x":230,"@y":79},"zoom":0.64999998,"SelectorView":{"ViewArea":{"@left":178,"@top":92,"@width":130,"@height":104},"QualifierView":{"Name":"Should
+    Move Closer","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Move
+    To Grid","ActionView":{"@connectorType":"Composite"}}},"SelectorView":{"ViewArea":{"@left":360,"@top":157,"@width":130,"@height":104},"QualifierView":{"ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{"ActionView":{}}},"SelectorView":{"ViewArea":{"@left":581,"@top":209,"@width":130,"@height":182},"QualifierView":{"Name":"Straight
+    move","ActionView":{}},"QualifierView":{"Name":"Move Behind Cover","ActionView":{}},"QualifierView":{"Name":"Move
+    to healer","ActionView":{}},"DefaultQualifier":{"ActionView":{}}}}'

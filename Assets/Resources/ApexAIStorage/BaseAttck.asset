@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: BaseAttck
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: f8302355-e2b6-4b15-8f31-cdb656017bf3
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":bfb6430f68d3464eb0f408c2f8fc19cf,"_id":f8302355e2b64b158f31cdb656017bf3,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":bfb6430f68d3464eb0f408c2f8fc19cf,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":a441faab119f4e06a9f597f0fcc2ebaf},"_scorers":[{"@type":"HasAttackTargetInRange,
+    Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":2,"action":{"@type":"MoveToTarget, Assembly-CSharp"}}},{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":a441faab119f4e06a9f597f0fcc2ebaf,"_qualifiers":[],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","action":{"@type":"Attack, Assembly-CSharp"}}}]}'
+  editorConfiguration: '{"offset":{"@x":213,"@y":86},"zoom":1,"SelectorView":{"ViewArea":{"@left":233,"@top":166,"@width":200,"@height":160},"QualifierView":{"ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Default","ActionView":{}}},"SelectorView":{"ViewArea":{"@left":713,"@top":146,"@width":200,"@height":100},"DefaultQualifier":{"Name":"Attack","ActionView":{}}}}'

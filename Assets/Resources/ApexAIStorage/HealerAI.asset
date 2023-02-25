@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: HealerAI
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: 6415ac96-54f2-405f-851d-aa2e3d6b1561
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":84e5e637a6394163bd70d7137574acdc,"_id":6415ac9654f2405f851daa2e3d6b1561,"_selectors":[{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":84e5e637a6394163bd70d7137574acdc,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":63832007c6c94183aa9197287d0040cc},"_scorers":[{"@type":"IsFollowTargetInRange,
+    Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","action":{"@type":"HealerScan, Assembly-CSharp","healthPercent":0.94999999}}},{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":63832007c6c94183aa9197287d0040cc,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"Attack, Assembly-CSharp"}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}}]}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":120,"@top":280,"@width":200,"@height":160},"QualifierView":{"ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"ActionView":{}}},"SelectorView":{"ViewArea":{"@left":500,"@top":380,"@width":200,"@height":160},"QualifierView":{"ActionView":{}},"DefaultQualifier":{}}}'

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19107361ee02a4112b22a99fa5e449da, type: 3}
+  m_Name: SO_Defence_LaserTower
+  m_EditorClassIdentifier: 
+  Name: Laser
+  Image: {fileID: 21300000, guid: 4ccb92625509a0248bee2a166342e516, type: 3}
+  Price: 700
+  Health: 300
+  IsActiveDefense: 1
+  AttackForce: 100
+  AttackRange: 20
+  ReloadTime: 10
+  ProjectileSpeed: 100
+  RotationSpeed: 0
+  Size: {x: 2, y: 2}
+  Condition: 0
+  PoolType: 102
+  Type: 4

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: FlamerAI
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: c2f7f769-1996-4d97-9479-77dcaba7e68b
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":725916fea88e42fa8865f09a05411a2d,"_id":c2f7f76919964d97947977dcaba7e68b,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":725916fea88e42fa8865f09a05411a2d,"_qualifiers":[{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":bea8620daa4840bea3e7e59e045894ea},"threshold":1,"_scorers":[{"@type":"HasNoAttackTargetInRange,
+    Assembly-CSharp","isDisabled":true},{"@type":"HasObservations, Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","score":2,"action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"BaseEnemyScan,
+    Assembly-CSharp"},{"@type":"AI.MoveToGrid, Assembly-CSharp"}]}}},{"@type":"Apex.AI.PrioritySelector,
+    ApexAI","_id":bea8620daa4840bea3e7e59e045894ea,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"Apex.AI.CompositeAction, ApexAI","_actions":[{"@type":"BaseEnemyScan,
+    Assembly-CSharp"},{"@type":"GetBestAttackTarget, Assembly-CSharp","MaxEnemiesToAttackOneTarget":3}],"_connectorAction":{"@type":"Apex.AI.SelectorAction,
+    ApexAI","_selectorId":c40aad85356143938ce87f2b7c00832b}}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI","action":{"@type":"AI.MoveToGrid, Assembly-CSharp"}}},{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":c40aad85356143938ce87f2b7c00832b,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
+    ApexAI","action":{"@type":"MoveToTarget, Assembly-CSharp"},"score":200},{"@type":"Apex.AI.CompositeAllOrNothingQualifier,
+    ApexAI","action":{"@type":"MoveToHealer, Assembly-CSharp"},"_scorers":[{"@type":"IsHealerInRange,
+    Assembly-CSharp"},{"@type":"IsHealthBelowAmount, Assembly-CSharp","healthThreshold":0.40000001}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}}]}'
+  editorConfiguration: '{"offset":{"@x":0,"@y":0},"zoom":1,"SelectorView":{"ViewArea":{"@left":160,"@top":180,"@width":200,"@height":160},"QualifierView":{"Name":"Should
+    Move Closer","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Move
+    To Grid","ActionView":{"@connectorType":"Composite"}}},"SelectorView":{"ViewArea":{"@left":440,"@top":240,"@width":200,"@height":160},"QualifierView":{"ActionView":{"@connectorType":"Composite"}},"DefaultQualifier":{"ActionView":{}}},"SelectorView":{"ViewArea":{"@left":740,"@top":280,"@width":200,"@height":220},"QualifierView":{"Name":"Straight
+    move","ActionView":{}},"QualifierView":{"Name":"Move to healer","ActionView":{}},"DefaultQualifier":{}}}'

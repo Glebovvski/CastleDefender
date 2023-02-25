@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1719459976, guid: 6012f3241c1c1f7409c44769fc0a1db7, type: 3}
+  m_Name: Heal
+  m_EditorClassIdentifier: 
+  description: 
+  version: 16779010
+  aiId: ce72fe61-d981-4271-aa01-40c6bbb20512
+  configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":34395c45b91e492daaa21d7356a421af,"_id":ce72fe61d9814271aa0140c6bbb20512,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
+    ApexAI","_id":34395c45b91e492daaa21d7356a421af,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
+    ApexAI","action":{"@type":"Attack, Assembly-CSharp"},"_scorers":[{"@type":"IsFollowTargetInRange,
+    Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
+    ApexAI"}}]}'
+  editorConfiguration: '{"offset":{"@x":318,"@y":80},"zoom":1,"SelectorView":{"ViewArea":{"@left":418,"@top":180,"@width":200,"@height":160},"QualifierView":{"ActionView":{}},"DefaultQualifier":{}}}'

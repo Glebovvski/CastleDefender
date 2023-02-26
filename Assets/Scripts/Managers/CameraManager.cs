@@ -12,12 +12,11 @@ public class CameraManager : MonoBehaviour
         GameTimeModel = gameTimeModel;
     }
 
-    private Vector3 touchStart;
-    private float dragSpeed = 20;
+    private float dragSpeed = 10;
 
-    private float zoomSpeed = 0.5f;
-    private int minZoom = 2;
-    private int maxZoom = 20;
+    private Vector2 worldStartPoint;
+
+    private float zoomSpeed = 0.1f;
 
     // Update is called once per frame
     void Update()
@@ -29,17 +28,38 @@ public class CameraManager : MonoBehaviour
             Camera.main.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, 0, Input.GetAxis("Mouse Y") * speed);
         }
 
-#elif PLATFORM_IOS || PLATFORM_ANDROID
+        #elif PLATFORM_IOS || PLATFORM_ANDROID
+
         if (Input.touchCount == 1)
         {
-            //MOVING
-            var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved)
+            Touch currentTouch = Input.GetTouch(0);
+
+            if (currentTouch.phase == TouchPhase.Began)
             {
-                float speed = dragSpeed * (Time.deltaTime / Time.timeScale);
-                Camera.main.transform.position -= new Vector3(touch.position.x * speed, 0, touch.position.y * speed);
+                this.worldStartPoint = this.GetWorldPoint(currentTouch.position);
+            }
+
+            if (currentTouch.phase == TouchPhase.Moved)
+            {
+                Vector2 worldDelta = this.GetWorldPoint(currentTouch.position) - this.worldStartPoint;
+
+                Camera.main.transform.Translate(
+                    -worldDelta.x,
+                    0,
+                    -worldDelta.y
+                );
             }
         }
+        // if (Input.touchCount == 1)
+        // {
+        //     //MOVING
+        //     var touch = Input.GetTouch(0);
+        //    // if (touch.phase == TouchPhase.Moved)
+        //     {
+        //         float speed = dragSpeed * (Time.deltaTime / Time.timeScale);
+        //         Camera.main.transform.position -= new Vector3(touch.position.x * speed, 0, touch.position.y * speed);
+        //     }
+        // }
         else if (Input.touchCount == 2)
         {
             //ZOOMING
@@ -62,8 +82,14 @@ public class CameraManager : MonoBehaviour
 
     private void Zoom(float v)
     {
-        Camera.main.fieldOfView += v * zoomSpeed;
+        Camera.main.fieldOfView -= v * zoomSpeed;
 
         Camera.main.fieldOfView = Mathf.Clamp(Camera.main.fieldOfView, 0.1f, 179.9f);
+    }
+
+    private Vector2 GetWorldPoint(Vector2 screenPoint)
+    {
+        Physics.Raycast(Camera.main.ScreenPointToRay(screenPoint), out var hit);
+        return hit.point;
     }
 }

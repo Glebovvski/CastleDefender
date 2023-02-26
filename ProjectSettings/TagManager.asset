@@ -3,23 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Dragger
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grid
+  - Defense
+  - Enemy
+  - ARGameObject
+  - Missile
+  - Detection
+  - MissileCollider
+  - SnapshotLayer
+  - EnemyTrigger
   - 
   - 
   - 

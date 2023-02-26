@@ -17,10 +17,7 @@ namespace Models
 
         private const string isTutorialCompletedKey = "IsTutorialCompleted";
 
-        private bool stepOneInited = false;
-        private bool stepTwoInited = false;
         private bool stepThreeInited = false;
-        private bool stepFourInited = false;
 
         private bool isTutorialCompleted = false;
         public bool IsTutorialCompleted
@@ -98,12 +95,7 @@ namespace Models
         }
         public void InitSimpleStep()
         {
-            if (
-                !stepOneInited ||
-                !stepTwoInited ||
-                !stepThreeInited
-                )
-                return;
+            if (!stepThreeInited) return;
 
             if (IsTutorialCompleted) return;
 

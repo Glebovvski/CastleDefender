@@ -183,7 +183,7 @@ namespace Enemies
             fx.gameObject.SetActive(true);
         }
 
-        private void RemoveEnemyFromField()
+        public void RemoveEnemyFromField()
         {
             OnDeath?.Invoke(this);
             fx.OnFinish -= RemoveEnemyFromField;

@@ -26,7 +26,7 @@ namespace AI
             for (int i = 0; i < Corners.Count; i++)
             {
                 var newDistance = Vector3.Distance(Corners[i], enemy.Position);
-                if (newDistance < distance)
+                if (newDistance < distance && newDistance > enemy.ScanRange/2f)
                 {
                     distance = newDistance;
                     cornerIndex = i;

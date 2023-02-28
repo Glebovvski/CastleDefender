@@ -20,8 +20,8 @@ namespace Enemies
         private GameControlModel GameModel { get; set; }
         private StatManager StatManager { get; set; }
         private InputManager InputManager { get; set; }
+        private PlaneManager PlaneManager { get; set; }
 
-        [SerializeField] private PlaneManager planeManager;
 
         [Header("Battle settings")]
         [Range(1, 25)]
@@ -32,8 +32,7 @@ namespace Enemies
         [SerializeField] private int maxBullEnemies;
         [Range(0, 5)]
         [SerializeField] private int maxHealerEnemies;
-        [Range(0, 5)]
-        [SerializeField] private int maxSpyEnemies;
+        [SerializeField] private int maxSpyEnemies = 1;
         [Range(0, 10)]
         [SerializeField] private int maxKamikazeEnemies;
         [Range(0, 5)]
@@ -45,7 +44,7 @@ namespace Enemies
 
         public event Action<int> OnEnemyDestroyed;
 
-        private List<Observation> Observations = new List<Observation>();
+        [SerializeField] private List<Observation> Observations = new List<Observation>();
         private List<Enemy> Enemies = new List<Enemy>();
 
         private Dictionary<PoolObjectType, int> enemyCoefs = new Dictionary<PoolObjectType, int>();
@@ -53,7 +52,7 @@ namespace Enemies
         private int Wave = 0;
 
         [Inject]
-        private void Construct(CurrencyModel currencyModel, GameGrid grid, CastleDefense castle, GameControlModel gameModel, StatManager statManager, InputManager inputManager)
+        private void Construct(CurrencyModel currencyModel, GameGrid grid, CastleDefense castle, GameControlModel gameModel, StatManager statManager, InputManager inputManager, PlaneManager planeManager)
         {
             CurrencyModel = currencyModel;
             Grid = grid;
@@ -61,6 +60,7 @@ namespace Enemies
             GameModel = gameModel;
             StatManager = statManager;
             InputManager = inputManager;
+            PlaneManager = planeManager;
         }
 
         private void Awake()
@@ -82,20 +82,28 @@ namespace Enemies
             Wave = 0;
             Castle.OnLose += ReturnAllEnemiesToPool;
             GameModel.OnRestart += ResetAIManager;
-            planeManager.OnGridSet += SpawnEnemies;
+            PlaneManager.OnGridSet += SpawnEnemies;
 
             enemyCoefs.Add(PoolObjectType.Enemy, maxBaseEnemies);
-            enemyCoefs.Add(PoolObjectType.SpyEnemy, maxSpyEnemies);
             enemyCoefs.Add(PoolObjectType.FlamerEnemy, maxFlamerEnemies);
             enemyCoefs.Add(PoolObjectType.BullEnemy, maxBullEnemies);
             enemyCoefs.Add(PoolObjectType.HealerEnemy, maxHealerEnemies);
             enemyCoefs.Add(PoolObjectType.KamikazeEnemy, maxKamikazeEnemies);
         }
 
+        private void SpawnSpy()
+        {
+            RegisterEnemy(PoolObjectType.SpyEnemy, spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Length - 1)]);
+        }
+
         private void SpawnEnemies()
         {
+            if (Wave == 0)
+                SpawnSpy();
+
             if (Wave > maxWaves)
                 return;
+            
             int maxEnemies = enemyCoefs.Select(x => x.Value).Sum();
             if (maxEnemies - Enemies.Count > maxBaseEnemies / 2 && Wave > 0)
                 return;
@@ -122,6 +130,7 @@ namespace Enemies
 
         private void ResetAIManager()
         {
+            Observations.Clear();
             Wave = 0;
             maxWaves = UnityEngine.Random.Range(1, 25);
             SpawnEnemies();
@@ -211,7 +220,7 @@ namespace Enemies
 
         public Enemy GetClosest(Enemy enemy, List<Enemy> selectedEnemies) => selectedEnemies.OrderBy(x => (x.Position - enemy.Position).sqrMagnitude).FirstOrDefault();
 
-        public float GetDistanceToGrid(Vector3 enemyPosition) => (Grid.transform.position - enemyPosition).sqrMagnitude;
+        public float GetDistanceToGrid(Vector3 enemyPosition) => (Grid.Centre - enemyPosition).sqrMagnitude;
 
         private Observation GetClosest(IEnemy enemy, List<Observation> observations)
         {
@@ -240,11 +249,22 @@ namespace Enemies
             Enemies.Clear();
         }
 
+        public void DestroyAll()
+        {
+            var enemiesTest = GameObject.FindObjectsOfType<Enemy>();
+            foreach (var enemy in enemiesTest)
+            {
+                enemy.RemoveEnemyFromField();
+                // PoolManager.Instance.ReturnToPool(enemy.GameObject, enemy.Type);
+            }
+            Enemies.Clear();
+        }
+
         private void OnDestroy()
         {
             Castle.OnLose -= ReturnAllEnemiesToPool;
             GameModel.OnRestart -= ResetAIManager;
-            planeManager.OnGridSet -= SpawnEnemies;
+            PlaneManager.OnGridSet -= SpawnEnemies;
         }
     }
 }

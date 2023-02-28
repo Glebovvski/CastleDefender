@@ -44,7 +44,7 @@ namespace ViewModels
         public void TryAgain()
         {
             GameControlModel.Restart();
-            view.gameObject.SetActive(false);
+            view.Close();
         }
 
         private void OnDestroy()

@@ -16,7 +16,7 @@ MonoBehaviour:
   AttackForce: 100
   GoldToDrop: 40
   Speed: 7
-  ScanRange: 25
+  ScanRange: 1
   AttackRange: 2
   AttackRadius: 1
   TimeBetweenAttacks: 0

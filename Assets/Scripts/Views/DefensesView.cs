@@ -1,3 +1,6 @@
+using Defendable;
+using Enemies;
+using Grid;
 using Managers;
 using UnityEngine;
 using ViewModels;
@@ -9,15 +12,17 @@ namespace Views
     {
         private DefensesViewModel ViewModel { get; set; }
         private AudioManager AudioManager { get; set; }
-
+        private CastleDefense Castle { get; set; }
+        
         [SerializeField] private GameObject defensesPanel;
         [SerializeField] private GameObject cancelBtn;
 
         [Inject]
-        private void Construct(DefensesViewModel vm, AudioManager audioManager)
+        private void Construct(DefensesViewModel vm, AudioManager audioManager, CastleDefense castle)
         {
             ViewModel = vm;
             AudioManager = audioManager;
+            Castle = castle;
         }
 
         private void Start()
@@ -49,6 +54,23 @@ namespace Views
         }
 
         public void ToggleCancelBtn(bool active) => cancelBtn.SetActive(active);
+
+        public void ResetCamera() => ViewModel.ResetCamera();
+
+        //TEST
+
+        public void Win()
+        {
+            AIManager.Instance.DestroyAll();
+        }
+
+        public void Lose()
+        {
+            Castle.TakeDamage(100000);
+        }
+
+        //END TEST
+
 
         private void OnDestroy()
         {

@@ -41,7 +41,7 @@ namespace Grid
         private List<List<GridCell>> pairCells = new List<List<GridCell>>();
 
         public ScriptableDefense SelectedDefense { get; private set; }
-        public Vector3 Centre => this.transform.position + new Vector3(Width / 2f, 0, Length / 2f);
+        public Vector3 Centre => Vector3.zero;
 
         public event Action OnGridCreated;
 

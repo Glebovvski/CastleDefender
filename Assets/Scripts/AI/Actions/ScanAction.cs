@@ -10,7 +10,8 @@ namespace AI
     {
         private LayerMask LayerMask;
         int Corner = 0;
-        List<Observation> defences = new List<Observation>();
+        List<Observation> observations = new List<Observation>();
+
         public override void Execute(IAIContext context)
         {
             LayerMask = LayerMask.GetMask("Defense");
@@ -20,10 +21,10 @@ namespace AI
             var colliders = Physics.OverlapSphere(Enemy.Position, Enemy.ScanRange, LayerMask);
             foreach (var defence in colliders)
             {
-                defences.Add(new Observation(defence.GetComponent<Defense>()));
+                observations.Add(new Observation(defence.GetComponent<Defense>()));
             }
-            Enemies.AIManager.Instance.AddObservation(defences);
-            defences.Clear();
+            Enemies.AIManager.Instance.AddObservation(observations);
+            observations.Clear();
 
             Enemy.SetIsScanFinished(true);
         }

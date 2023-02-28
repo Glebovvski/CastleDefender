@@ -124,7 +124,7 @@ public class InputManager : MonoBehaviour
         Ray ray;
 #if UNITY_EDITOR || PLATFORM_STANDALONE_WIN
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-#elif UNITY_IOS || PLATFORM_IOS || PLATFORM_ANDROID
+#elif UNITY_IOS || PLATFORM_IOS || PLATFORM_ANDROID || UNITY_ANDROID
         ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 #endif
         if (Physics.Raycast(ray, out var raycastHit, 1000f, layer))

@@ -17,7 +17,7 @@ MonoBehaviour:
   aiId: e6fc5f07-8ee4-4a75-9962-ce8dc82f8f7c
   configuration: '{"@type":"Apex.AI.UtilityAI, ApexAI","_rootSelectorId":94ca91a08eec4e3a81af7290b24e16f0,"_id":e6fc5f078ee44a759962ce8dc82f8f7c,"_selectors":[{"@type":"Apex.AI.ScoreSelector,
     ApexAI","_id":2a47907e25224653b07cd42428009632,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
-    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":80e8110176fc4a98b195880dd536b05f},"_scorers":[{"@type":"AI.IsScanFinished,
+    ApexAI","action":{"@type":"Apex.AI.SelectorAction, ApexAI","_selectorId":80e8110176fc4a98b195880dd536b05f},"_scorers":[{"@type":"IsScanFinished,
     Assembly-CSharp"}]}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
     ApexAI","action":{"@type":"AI.ScanAction, Assembly-CSharp"}}},{"@type":"Apex.AI.ScoreSelector,
     ApexAI","_id":94ca91a08eec4e3a81af7290b24e16f0,"_qualifiers":[{"@type":"Apex.AI.CompositeScoreQualifier,
@@ -26,9 +26,9 @@ MonoBehaviour:
     ApexAI","action":{"@type":"AI.MoveToGrid, Assembly-CSharp"}}},{"@type":"Apex.AI.PrioritySelector,
     ApexAI","_id":80e8110176fc4a98b195880dd536b05f,"_qualifiers":[{"@type":"Apex.AI.FixedScoreQualifier,
     ApexAI","action":{"@type":"AI.MoveAroundGrid, Assembly-CSharp"}}],"_defaultQualifier":{"@type":"Apex.AI.DefaultQualifier,
-    ApexAI"}}]}'
-  editorConfiguration: '{"offset":{"@x":50,"@y":151},"zoom":1,"SelectorView":{"ViewArea":{"@left":390,"@top":291,"@width":200,"@height":160},"Name":"Scan","QualifierView":{"Name":"Is
-    Scan Finished","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Scan","ActionView":{}}},"SelectorView":{"ViewArea":{"@left":150,"@top":211,"@width":200,"@height":160},"QualifierView":{"Name":"Is
+    ApexAI","action":{"@type":"AI.ScanAction, Assembly-CSharp"}}}]}'
+  editorConfiguration: '{"offset":{"@x":138,"@y":151},"zoom":1,"SelectorView":{"ViewArea":{"@left":478,"@top":291,"@width":200,"@height":160},"Name":"Scan","QualifierView":{"Name":"Is
+    Scan Finished","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Scan","ActionView":{}}},"SelectorView":{"ViewArea":{"@left":238,"@top":211,"@width":200,"@height":160},"QualifierView":{"Name":"Is
     Close To Grid","ActionView":{"@connectorType":"Selector"}},"DefaultQualifier":{"Name":"Move
-    To Grid","ActionView":{}}},"SelectorView":{"ViewArea":{"@left":630,"@top":391,"@width":200,"@height":160},"QualifierView":{"Name":"Move
-    Around Grid","ActionView":{}},"DefaultQualifier":{}}}'
+    To Grid","ActionView":{}}},"SelectorView":{"ViewArea":{"@left":718,"@top":391,"@width":200,"@height":160},"QualifierView":{"Name":"Move
+    Around Grid","ActionView":{}},"DefaultQualifier":{"ActionView":{}}}}'

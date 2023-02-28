@@ -59,6 +59,12 @@ namespace ViewModels
             DefensesModel.DefenseDeselected();
         }
 
+        public event Action OnResetCameraClick;
+        public void ResetCamera()
+        {
+            OnResetCameraClick?.Invoke();
+        }
+
         private void OnDestroy()
         {
             DefensesModel.OnSelectDefenseClick -= DefenseSelected;

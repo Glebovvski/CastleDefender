@@ -71,7 +71,7 @@ MonoBehaviour:
   aiConfigs:
   - aiId: e6fc5f07-8ee4-4a75-9962-ce8dc82f8f7c
     intervalMin: 1
-    intervalMax: 5
+    intervalMax: 1
     startDelayMin: 0
     startDelayMax: 0
     isActive: 1
@@ -86,8 +86,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: -0.101934075, y: 1.3, z: -0.04449141}
+  m_Size: {x: 1.6739268, y: 2.4065642, z: 1}
+  m_Center: {x: -0.02515471, y: 0.7076991, z: -0.04449141}
 --- !u!195 &7875034080553232178
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 497068949028825284}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 1
   avoidancePriority: 50

@@ -9,6 +9,8 @@ namespace Views
     {
         private AudioManager AudioManager { get; set; }
 
+        [SerializeField] private GameObject losePanel;
+
         public event Action OnTryAgainClick;
         public event Action OnMenuClick;
 
@@ -28,7 +30,7 @@ namespace Views
             AudioManager.PlayUI();
             OnMenuClick?.Invoke();
         }
-        public void Open() => this.gameObject.SetActive(true);
-        public void Close() => this.gameObject.SetActive(false);
+        public void Open() => losePanel.SetActive(true);
+        public void Close() => losePanel.SetActive(false);
     }
 }

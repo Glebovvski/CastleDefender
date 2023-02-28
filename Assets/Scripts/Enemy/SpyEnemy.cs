@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Enemies
 {
     public class SpyEnemy : Enemy

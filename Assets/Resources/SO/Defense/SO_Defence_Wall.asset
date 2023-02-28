@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wall
   Image: {fileID: 21300000, guid: 4578f3ab370dd67488583826fbeba522, type: 3}
-  Price: 200
+  Price: 25
   Health: 150
   IsActiveDefense: 0
   AttackForce: 0

@@ -1,6 +1,13 @@
 Google Mobile Ads Unity Plugin Change Log
 
 **************
+Version 7.4.1
+**************
+
+Plugin:
+- Added support for GMA iOS SDK v10. Requires using Google Mobile Ads iOS SDK v10.0 or higher.
+
+**************
 Version 7.4.0
 **************
 

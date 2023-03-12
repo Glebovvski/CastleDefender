@@ -59,8 +59,10 @@ namespace Managers
         {
 #if UNITY_ANDROID
             string adUnitId = "ca-app-pub-2564312810103530/2104409223";
-#elif UNITY_IPHONE
+#elif UNITY_IPHONE || PLATFORM_IOS
             string adUnitId = "ca-app-pub-2564312810103530/1696666379";
+#else
+        string adUnitId = "unexpected_platform";
 #endif
 
             // Create a 320x50 banner at the top of the screen.

@@ -39,41 +39,15 @@ public class CameraManager : MonoBehaviour
             Camera.main.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, 0, Input.GetAxis("Mouse Y") * speed);
         }
 
-#elif PLATFORM_IOS || PLATFORM_ANDROID
-
-        // if (Input.touchCount == 1)
-        // {
-        //     Touch currentTouch = Input.GetTouch(0);
-
-        //     if (currentTouch.phase == TouchPhase.Began)
-        //     {
-        //         this.worldStartPoint = this.GetWorldPoint(currentTouch.position);
-        //     }
-
-        //     if (currentTouch.phase == TouchPhase.Moved)
-        //     {
-        //         Vector2 worldDelta = this.GetWorldPoint(currentTouch.position) - this.worldStartPoint;
-
-        //         Camera.main.transform.position -= new Vector3(
-        //             -worldDelta.x,
-        //             0,
-        //             -worldDelta.y
-        //         );
-        //     }
-        // }
+        #elif PLATFORM_IOS || PLATFORM_ANDROID
         if (Input.touchCount == 1)
         {
             //MOVING
             var touch = Input.GetTouch(0);
-           // if (touch.phase == TouchPhase.Moved)
-            {
-                // float speed = dragSpeed * (Time.deltaTime / Time.timeScale);
-                float speed = (Time.deltaTime / Time.timeScale);
-                Camera.main.transform.position -= new Vector3(touch.deltaPosition.x * speed, 0, touch.deltaPosition.y * speed);
-            }
+            float speed = (Time.deltaTime / Time.timeScale);
+            Camera.main.transform.position -= new Vector3(touch.deltaPosition.x * speed, 0, touch.deltaPosition.y * speed);
         }
-        else
-         if (Input.touchCount == 2)
+        else if (Input.touchCount == 2)
         {
             //ZOOMING
             var touch0 = Input.GetTouch(0);
